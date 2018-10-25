@@ -51,8 +51,8 @@ class StripWhitespaceMiddleware(object):
             if hasattr(self, 'whitespace_trail'):
                 response.content = self.whitespace_trail.sub('\n', response.content)
             # Uncomment the next line to remove empty lines
-            if hasattr(self, 'whitespace'):
-                response.content = self.whitespace.sub('', response.content)
+            #if hasattr(self, 'whitespace'):
+            #    response.content = self.whitespace.sub('', response.content)
             return response
         else:
             return response
