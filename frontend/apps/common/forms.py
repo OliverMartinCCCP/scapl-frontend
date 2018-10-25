@@ -2,7 +2,7 @@
 from django import forms
 from django.utils.translation import ugettext_lazy as _
 from .models import GenericUser, Title, Rank, Service, Tooltip
-from .widgets import AdminSummernoteInplaceWidget
+from django_summernote.widgets import SummernoteInplaceWidget
 try:
     from bootstrap_themes import list_themes
 except ImportError:
@@ -108,7 +108,7 @@ TOOLTIP_TYPE_CHOICES = (
 
 class TooltipForm(forms.ModelForm):
     type = forms.ChoiceField(choices=TOOLTIP_TYPE_CHOICES)
-    body = forms.CharField(widget=AdminSummernoteInplaceWidget())
+    body = forms.CharField(widget=SummernoteInplaceWidget())
 
     class Meta:
         model = Tooltip
