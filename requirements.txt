@@ -37,3 +37,4 @@ slimit
 unittest2>=0.4.0
 Pillow
 virtualenv
+cffi
