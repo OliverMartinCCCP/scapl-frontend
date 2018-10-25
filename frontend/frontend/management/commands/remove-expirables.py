@@ -2,7 +2,7 @@ import logging
 from django.apps import apps
 from django.conf import settings
 from django.core.exceptions import FieldDoesNotExist
-from django.core.management.base import NoArgsCommand
+from django.core.management.base import BaseCommand
 from django.db import connection
 from django.db.utils import OperationalError
 from django.utils.timezone import now, timedelta
@@ -10,10 +10,10 @@ from django.utils.timezone import now, timedelta
 logger = logging.getLogger('django')
 
 
-class Command(NoArgsCommand):
+class Command(BaseCommand):
     help = 'Remove expired instances'
 
-    def handle_noargs(self, *args, **kwargs):
+    def handle(self, *args, **kwargs):
         logger.info('Starting expired instances removal...')
         for app in apps.get_app_configs():
             if app.name not in settings.SCAPL_INSTALLED_APPS:
