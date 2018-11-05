@@ -26,13 +26,13 @@
     {% else %}
     {% bootstrap_styles theme type='min.css' %}
     {% endif %}
-    <link rel="stylesheet" type="text/css" href="{% static "admin/css/overrides.css" %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'admin/css/overrides.css' %}" />
     {# SCAPL-specific #}
     <link rel="stylesheet" href="{% static 'base/css/page-layout.css' %}">
     {# Other styles #}
     {% if LANGUAGE_BIDI %}
-    <link href="{% static "bootstrap-rtl/css/bootstrap-rtl.min.css" %}" rel="stylesheet"/>
-    <link href="{% static "bootstrap-rtl/css/bootstrap-flipped.min.css" %}" rel="stylesheet"/>
+    <link href="{% static 'bootstrap-rtl/css/bootstrap-rtl.min.css' %}" rel="stylesheet"/>
+    <link href="{% static 'bootstrap-rtl/css/bootstrap-flipped.min.css' %}" rel="stylesheet"/>
     {% endif %}
     {# Other scripts #}
     <script type="text/javascript">
