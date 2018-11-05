@@ -74,7 +74,7 @@ class Task(models.Model):
         if not self.status:
             status = Status.objects.filter(order=1)
             self.status = Status(status="UNDEFINED") if len(status) == 0 else status[0]
-	    
+    
         super(Task, self).save(*args, **kwargs)
         if not self.code:
             self.code = "{}_{}".format(now().year, str(self.pk or 'X' * 3).zfill(3))
