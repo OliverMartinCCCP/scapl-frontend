@@ -48,6 +48,9 @@
     <script src="{% static 'base/js/jquery.validate.min.js' %}"></script>
     <script src="{% static 'toastmessages/js/jquery.toastmessage.modified.js' %}"></script>
     <script src="{% static 'admin/js/jquery-migrate-1.2.1.min.js' %}"></script>
+    {% block extrahead %}{% endblock %}
+
+    {% block blockbots %}<meta name="robots" content="NONE,NOARCHIVE" />{% endblock %}
     {# Bootstrap script (managed by app 'bootstrap_themes' #}
     {% bootstrap_script use_min=True %}
     <!--[if lt IE 9]>
@@ -57,10 +60,6 @@
     {# WARNING: Respond.js doesn't work if you view the page via file:// #}
     <script src="{% static 'base/js/respond.min.js' %}"></script>
     <![endif]-->
-
-    {% block extrahead %}{% endblock %}
-
-    {% block blockbots %}<meta name="robots" content="NONE,NOARCHIVE" />{% endblock %}
     <script type="text/javascript">
     //<![CDATA[
             (function($) {
