@@ -102,7 +102,7 @@ def start_wizard(request, apl_id=None, seq_id=None):
     def select_sequence(sr):
         form, sequences = None, sr.user.role.related_sequences.all()
         if len(sequences) == 0:
-            messages.add_message(sr, messages.ERROR, _("You don't have any sequence associated yet, please contact your administrator."))
+            messages.add_message(sr, messages.ERROR, _("You do not have any sequence associated yet, please contact your administrator."))
             return redirect('home')
         elif len(sequences) == 1:
             sr.session['sequence'] = [sequences[0].id, sequences[0].name]
