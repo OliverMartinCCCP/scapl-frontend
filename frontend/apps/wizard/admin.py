@@ -20,7 +20,7 @@ class TaskItemResultAdmin(admin.ModelAdmin):
     fieldsets = ((None, {'fields': ()}), )
 
     def expires_on(self, obj):
-        return obj.date_triggered + timedelta(seconds=self.expires_after)
+        return obj.date_created + timedelta(seconds=obj.expires_after)
 
     def has_add_permission(self, request):
         return False
