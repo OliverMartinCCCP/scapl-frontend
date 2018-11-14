@@ -110,7 +110,7 @@
         var id = di_id.substring(3);
         $.ajax({
             type: 'POST',
-            url: '{% url 'update_di' %}',
+            url: "{% url 'update_di' %}",
             data: {
                 csrfmiddlewaretoken: csrftoken,
                 task: task_id,
