@@ -43,7 +43,7 @@ ASYNC_TASK_EXPIRATION = 10  # 24 * 3600
 SECRET_KEY = 'vm-ucdk*adk1$47^ri1!&8sp)ms%u^$26v)zhq6l$r@s_&ur%8'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['192.168.10.20']
 DENIED_HOSTS = []
@@ -219,21 +219,21 @@ PASSWORD_HASHERS = [
 
 # TODO: Enable for production version
 # Password validation
-# AUTH_PASSWORD_VALIDATORS = [
-#     {
-#         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
-#     },
-#     {
-#         'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
-#         'OPTIONS': {'min_length': 8,}
-#     },
-#     {
-#         'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
-#     },
-#     {
-#         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
-#     },
-# ]
+AUTH_PASSWORD_VALIDATORS = [
+    {
+        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+    },
+    {
+        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+        'OPTIONS': {'min_length': 8,}
+    },
+    {
+        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+    },
+    {
+        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+    },
+]
 
 # Honor the 'X-Forwarded-Proto' header for request.is_secure()
 # SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
@@ -287,12 +287,12 @@ MAX_RECENT_TASKS = 5
 # TODO: Enable Memcache for production version
 # Cache management
 # https://docs.djangoproject.com/en/1.9/topics/cache/#memcached
-# CACHES = {
-#     'default': {
-#         'BACKEND': 'django.core.cache.backends.memcached.PyLibMCCache',
-#         'LOCATION': '/tmp/memcached.sock',
-#     }
-# }
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.memcached.PyLibMCCache',
+        'LOCATION': '/tmp/memcached.sock',
+    }
+}
 
 # Smuggler configuration
 SMUGGLER_FIXTURE_DIR = './data/'
@@ -425,16 +425,16 @@ LOGGING = {
 # Note: JS and CSS are manually imported in the relevant templates
 
 # TODO: Enable JS and CSS compression for production version
-# COMPRESS_ENABLED = True
-# COMPRESS_OFFLINE = True
-# COMPRESS_CSS_FILTERS = [
-#     'compressor.filters.cleancss.CleanCSSFilter',
-#     'compressor.filters.css_default.CssAbsoluteFilter',
-#     'compressor.filters.cssmin.CSSCompressorFilter',
-#     'compressor.filters.yui.YUICSSFilter',
-# ]
-# COMPRESS_JS_FILTERS = [
-#     'compressor.filters.jsmin.JSMinFilter',
-#     'compressor.filters.yui.YUIJSFilter',
-# ]
-# COMPRESS_YUI_BINARY = os.path.join(STATICFILES_DIRS[0], 'base', 'yuicompressor.jar').replace('\\', '/')
+COMPRESS_ENABLED = True
+COMPRESS_OFFLINE = True
+COMPRESS_CSS_FILTERS = [
+    'compressor.filters.cleancss.CleanCSSFilter',
+    'compressor.filters.css_default.CssAbsoluteFilter',
+    'compressor.filters.cssmin.CSSCompressorFilter',
+    'compressor.filters.yui.YUICSSFilter',
+]
+COMPRESS_JS_FILTERS = [
+    'compressor.filters.jsmin.JSMinFilter',
+    'compressor.filters.yui.YUIJSFilter',
+]
+COMPRESS_YUI_BINARY = os.path.join(STATICFILES_DIRS[0], 'base', 'yuicompressor.jar').replace('\\', '/')
