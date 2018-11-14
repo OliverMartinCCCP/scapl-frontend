@@ -162,8 +162,7 @@ def start_wizard(request, apl_id=None, seq_id=None):
     wizard = make_wizard(*current)
     for error_msg in wizard['errors']:
         messages.add_message(request, messages.ERROR, error_msg)
-    return render(request, 'wizard/wizard.html', {'wizard': wizard, 'edit_mode': edit,
-                                                  'summernote_settings': json.dumps(SummernoteInplaceWidget().template_contexts())})
+    return render(request, 'wizard/wizard.html', {'wizard': wizard, 'edit_mode': edit, 'summernote_settings': json.dumps(SummernoteInplaceWidget().summernote_settings())})
 
 
 @require_http_methods(["POST"])
