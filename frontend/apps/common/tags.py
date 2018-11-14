@@ -11,11 +11,8 @@ def classname(obj):
 
 
 @register.filter
-def getattribute(obj, attr):
-    if hasattr(obj, str(attr)):
-        return getattr(obj, attr)
-    elif hasattr(obj, 'has_key') and obj.has_key(attr):
-        return obj[attr]
+def getattribute(dictionary, attr):
+    return dictionary.get(attr, None)
 
 
 # inspired from: https://github.com/Arpaso/toastmessage/blob/master/toastmessage/templatetags/toastmessage.py
