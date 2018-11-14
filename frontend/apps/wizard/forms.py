@@ -72,13 +72,13 @@ class WizardSummernoteWidget(SummernoteInplaceWidget):
         html = super(SummernoteInplaceWidget, self).render(name, value, attrs_for_textarea)
         html += render_to_string(
             'wizard/wizard/data-form-summernote.html',
-            Context(dict({
+            dict({
                 'id': self.attrs['id'].replace('-', '_'),
                 'id_src': self.attrs['id'],
                 'value': value if value else '',
-                'settings': json.dumps(self.template_contexts()),
+                'settings': json.dumps(self.summernote_settings()),
                 'STATIC_URL': settings.STATIC_URL,
-            }))
+            })
         )
         return mark_safe(html)
 
