@@ -145,12 +145,13 @@ WSGI_APPLICATION = 'frontend.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': 'scapl.sqlite3',
-        'USER': '',
-        'PASSWORD': '',
-        'HOST': '',
-        'PORT': ''},
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'scapl',
+        'USER': 'scapl',
+        'PASSWORD': 'scaplpassword',
+        'HOST': 'localhost',
+        'PORT': '',
+        'CONN_MAX_AGE': '100'},
 }
 
 # Internationalization
