@@ -1,6 +1,5 @@
 """
 Django settings for frontend project.
-
 For more information on this file, see
 https://docs.djangoproject.com/en/1.7/topics/settings/
 
@@ -20,7 +19,7 @@ PROJECT_AUTHORS = 'Alex & Hussein'
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 # Celery settings
-BROKER_URL = 'amqp://guest:guest@localhost:5672/'
+BROKER_URL = 'amqp://guest:guest@192.168.10.10:5672/'
 #BROKER_URL = 'amqp://scapl:scapl@localhost:5672/vScapl'
 CELERY_ACCEPT_CONTENT = ['json']
 CELERY_RESULT_BACKEND = 'amqp'
